@@ -20,7 +20,7 @@ name_of_order = st.text_input('Name Of The Smoothie:')
 st.write('The name of your smoothie ', name_of_order)
 
 
-cnx = st.connection("snowflake")
+cnx = st.connection('snowflake')
 session = cnx.session()
 # session = get_active_session()
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
